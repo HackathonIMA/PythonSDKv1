@@ -5,6 +5,7 @@ class EmpenhoResponse:
 
     def __init__(self):
         self.swaggerTypes = {
+            'links': 'list[LinksModel]',
             'id': 'str',
             'codigo_funcao': 'int',
             'processo': 'str'
@@ -12,12 +13,16 @@ class EmpenhoResponse:
         }
 
         self.attributeMap = {
+            'links': 'links',
             'id': 'ID',
             'codigo_funcao': 'codigoFuncao',
             'processo': 'processo'
             
         }
 
+        
+        
+        self.links = None # list[LinksModel]
         
         #Identificador do registro.
         

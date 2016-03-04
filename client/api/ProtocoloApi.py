@@ -18,7 +18,6 @@ class ProtocoloApi(object):
         O recurso de protocolo existe para fornecer informaÃ§Ãµes sobre protocolos gerados pela prefeitura.\n
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
@@ -26,12 +25,14 @@ class ProtocoloApi(object):
             codigo_bairro, int: Filtra resultados por cÃ³digo do bairro. (required)
             sigla_expediente, str: Filtra resultados pelo cÃ³digo da secretaria expediente. (required)
             ano_processo, int: Filtra resultados pelo ano em que foram lanÃ§ados. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: list[ProtocoloResponse]
         """
 
-        allParams = ['access_token', 'client_id', 'offset', 'limit', 'nome_regiao', 'codigo_bairro', 'sigla_expediente', 'ano_processo']
+        allParams = ['client_id', 'offset', 'limit', 'nome_regiao', 'codigo_bairro', 'sigla_expediente', 'ano_processo', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -66,10 +67,13 @@ class ProtocoloApi(object):
         if ('ano_processo' in params):
             queryParams['anoProcesso'] = self.apiClient.toPathValue(params['ano_processo'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -97,15 +101,16 @@ class ProtocoloApi(object):
         
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             id, int: Identificador do protocolo. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: ProtocoloResponse
         """
 
-        allParams = ['access_token', 'client_id', 'id']
+        allParams = ['client_id', 'id', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -122,10 +127,13 @@ class ProtocoloApi(object):
         headerParams = {}
 
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']

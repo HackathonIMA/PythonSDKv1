@@ -18,16 +18,17 @@ class TransparenciaApi(object):
         
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: list[AcoesResponse]
         """
 
-        allParams = ['access_token', 'client_id', 'offset', 'limit']
+        allParams = ['client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -50,10 +51,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -82,16 +86,17 @@ class TransparenciaApi(object):
 
         Args:
             id, str: Identificador do registro. (required)
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: AcoesResponse
         """
 
-        allParams = ['id', 'access_token', 'client_id', 'offset', 'limit']
+        allParams = ['id', 'client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -114,10 +119,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -150,16 +158,17 @@ class TransparenciaApi(object):
         
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: list[CredorResponse]
         """
 
-        allParams = ['access_token', 'client_id', 'offset', 'limit']
+        allParams = ['client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -182,10 +191,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -214,16 +226,17 @@ class TransparenciaApi(object):
 
         Args:
             id, str: Identificador do registro. (required)
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: CredorResponse
         """
 
-        allParams = ['id', 'access_token', 'client_id', 'offset', 'limit']
+        allParams = ['id', 'client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -246,10 +259,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -282,10 +298,11 @@ class TransparenciaApi(object):
         
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             ano_exercicio, str: Ano de exercÃ­cio (required)
             acao, str: AÃ§Ã£o, lista disponÃ­vel em GET /transparencia/acoes (required)
             mes, str: MÃªs desejado (required)
@@ -302,7 +319,7 @@ class TransparenciaApi(object):
         Returns: list[despesasResponse]
         """
 
-        allParams = ['access_token', 'client_id', 'offset', 'limit', 'ano_exercicio', 'acao', 'mes', 'orgao', 'funcao', 'subfuncao', 'programa', 'origem_fonte', 'fonte', 'natureza_despesa', 'expand']
+        allParams = ['client_id', 'offset', 'limit', 'fields', 'filters', 'ano_exercicio', 'acao', 'mes', 'orgao', 'funcao', 'subfuncao', 'programa', 'origem_fonte', 'fonte', 'natureza_despesa', 'expand']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -324,6 +341,12 @@ class TransparenciaApi(object):
         
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
+        
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
+        
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
         
         if ('ano_exercicio' in params):
             queryParams['anoExercicio'] = self.apiClient.toPathValue(params['ano_exercicio'])
@@ -360,9 +383,6 @@ class TransparenciaApi(object):
         
 
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
-        
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
         
@@ -390,15 +410,16 @@ class TransparenciaApi(object):
 
         Args:
             id, str: Identificador do registro. (required)
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             expand, str: ParÃ¢metro utilizado para obter maiores detalhes sobre algum dos atributos do recurso. Podendo ser passados mÃºltiplos campos separados por vÃ­rgula (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: despesasResponse
         """
 
-        allParams = ['id', 'access_token', 'client_id', 'expand']
+        allParams = ['id', 'client_id', 'expand', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -418,10 +439,13 @@ class TransparenciaApi(object):
         if ('expand' in params):
             queryParams['expand'] = self.apiClient.toPathValue(params['expand'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -454,16 +478,17 @@ class TransparenciaApi(object):
         
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: list[ElementoDespesaResponse]
         """
 
-        allParams = ['access_token', 'client_id', 'offset', 'limit']
+        allParams = ['client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -486,10 +511,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -518,16 +546,17 @@ class TransparenciaApi(object):
 
         Args:
             id, str: Identificador do registro. (required)
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: ElementoDespesaResponse
         """
 
-        allParams = ['id', 'access_token', 'client_id', 'offset', 'limit']
+        allParams = ['id', 'client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -550,10 +579,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -586,16 +618,17 @@ class TransparenciaApi(object):
         
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: list[EmpenhoResponse]
         """
 
-        allParams = ['access_token', 'client_id', 'offset', 'limit']
+        allParams = ['client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -618,10 +651,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -650,16 +686,17 @@ class TransparenciaApi(object):
 
         Args:
             id, str: Identificador do registro. (required)
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: EmpenhoResponse
         """
 
-        allParams = ['id', 'access_token', 'client_id', 'offset', 'limit']
+        allParams = ['id', 'client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -682,10 +719,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -718,17 +758,18 @@ class TransparenciaApi(object):
         
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
             expand, str: ParÃ¢metro utilizado para obter maiores detalhes sobre algum dos atributos do recurso. Podendo ser passados mÃºltiplos campos separados por vÃ­rgula (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: list[FontesResponse]
         """
 
-        allParams = ['access_token', 'client_id', 'offset', 'limit', 'expand']
+        allParams = ['client_id', 'offset', 'limit', 'expand', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -754,10 +795,13 @@ class TransparenciaApi(object):
         if ('expand' in params):
             queryParams['expand'] = self.apiClient.toPathValue(params['expand'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -786,17 +830,18 @@ class TransparenciaApi(object):
 
         Args:
             id, str: Identificador do registro. (required)
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
             expand, str: ParÃ¢metro utilizado para obter maiores detalhes sobre algum dos atributos do recurso. Podendo ser passados mÃºltiplos campos separados por vÃ­rgula (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: FontesResponse
         """
 
-        allParams = ['id', 'access_token', 'client_id', 'offset', 'limit', 'expand']
+        allParams = ['id', 'client_id', 'offset', 'limit', 'expand', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -822,10 +867,13 @@ class TransparenciaApi(object):
         if ('expand' in params):
             queryParams['expand'] = self.apiClient.toPathValue(params['expand'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -858,16 +906,17 @@ class TransparenciaApi(object):
         
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: list[FonteDetalhadaResponse]
         """
 
-        allParams = ['access_token', 'client_id', 'offset', 'limit']
+        allParams = ['client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -890,10 +939,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -922,16 +974,17 @@ class TransparenciaApi(object):
 
         Args:
             id, str: Identificador do registro. (required)
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: FonteDetalhadaResponse
         """
 
-        allParams = ['id', 'access_token', 'client_id', 'offset', 'limit']
+        allParams = ['id', 'client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -954,10 +1007,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -990,16 +1046,17 @@ class TransparenciaApi(object):
         
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: list[FuncoesResponse]
         """
 
-        allParams = ['access_token', 'client_id', 'offset', 'limit']
+        allParams = ['client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -1022,10 +1079,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -1054,16 +1114,17 @@ class TransparenciaApi(object):
 
         Args:
             id, str: Identificador do registro. (required)
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: FuncoesResponse
         """
 
-        allParams = ['id', 'access_token', 'client_id', 'offset', 'limit']
+        allParams = ['id', 'client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -1086,10 +1147,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -1122,17 +1186,18 @@ class TransparenciaApi(object):
         
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
             expand, str: ParÃ¢metro utilizado para obter maiores detalhes sobre algum dos atributos do recurso. Podendo ser passados mÃºltiplos campos separados por vÃ­rgula (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: list[naturezasResponse]
         """
 
-        allParams = ['access_token', 'client_id', 'offset', 'limit', 'expand']
+        allParams = ['client_id', 'offset', 'limit', 'expand', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -1158,10 +1223,13 @@ class TransparenciaApi(object):
         if ('expand' in params):
             queryParams['expand'] = self.apiClient.toPathValue(params['expand'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -1190,17 +1258,18 @@ class TransparenciaApi(object):
 
         Args:
             id, str: Identificador do registro. (required)
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
             expand, str: ParÃ¢metro utilizado para obter maiores detalhes sobre algum dos atributos do recurso. Podendo ser passados mÃºltiplos campos separados por vÃ­rgula (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: naturezasResponse
         """
 
-        allParams = ['id', 'access_token', 'client_id', 'offset', 'limit', 'expand']
+        allParams = ['id', 'client_id', 'offset', 'limit', 'expand', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -1226,10 +1295,13 @@ class TransparenciaApi(object):
         if ('expand' in params):
             queryParams['expand'] = self.apiClient.toPathValue(params['expand'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -1262,16 +1334,17 @@ class TransparenciaApi(object):
         
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: list[ProgramaResponse]
         """
 
-        allParams = ['access_token', 'client_id', 'offset', 'limit']
+        allParams = ['client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -1294,10 +1367,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -1326,16 +1402,17 @@ class TransparenciaApi(object):
 
         Args:
             id, str: Identificador do registro. (required)
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: ProgramaResponse
         """
 
-        allParams = ['id', 'access_token', 'client_id', 'offset', 'limit']
+        allParams = ['id', 'client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -1358,10 +1435,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -1394,17 +1474,18 @@ class TransparenciaApi(object):
         
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
             expand, str: ParÃ¢metro utilizado para obter maiores detalhes sobre algum dos atributos do recurso. Podendo ser passados mÃºltiplos campos separados por vÃ­rgula (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: list[ProjetoAtividadeResponse]
         """
 
-        allParams = ['access_token', 'client_id', 'offset', 'limit', 'expand']
+        allParams = ['client_id', 'offset', 'limit', 'expand', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -1430,10 +1511,13 @@ class TransparenciaApi(object):
         if ('expand' in params):
             queryParams['expand'] = self.apiClient.toPathValue(params['expand'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -1462,17 +1546,18 @@ class TransparenciaApi(object):
 
         Args:
             id, str: Identificador do registro. (required)
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
             expand, str: ParÃ¢metro utilizado para obter maiores detalhes sobre algum dos atributos do recurso. Podendo ser passados mÃºltiplos campos separados por vÃ­rgula (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: ProjetoAtividadeResponse
         """
 
-        allParams = ['id', 'access_token', 'client_id', 'offset', 'limit', 'expand']
+        allParams = ['id', 'client_id', 'offset', 'limit', 'expand', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -1498,10 +1583,13 @@ class TransparenciaApi(object):
         if ('expand' in params):
             queryParams['expand'] = self.apiClient.toPathValue(params['expand'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -1534,10 +1622,11 @@ class TransparenciaApi(object):
         
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             ano, str: Ano de exercÃ­cio (required)
             mes, str: MÃªs desejado (required)
             unidade, str: Unidades, lista disponÃ­vel em GET /transparencia/unidades (required)
@@ -1547,7 +1636,7 @@ class TransparenciaApi(object):
         Returns: list[ReceitaResponse]
         """
 
-        allParams = ['access_token', 'client_id', 'offset', 'limit', 'ano', 'mes', 'unidade', 'natureza']
+        allParams = ['client_id', 'offset', 'limit', 'fields', 'filters', 'ano', 'mes', 'unidade', 'natureza']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -1570,6 +1659,12 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
+        
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
         if ('ano' in params):
             queryParams['ano'] = self.apiClient.toPathValue(params['ano'])
         
@@ -1583,9 +1678,6 @@ class TransparenciaApi(object):
             queryParams['natureza'] = self.apiClient.toPathValue(params['natureza'])
         
 
-        
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -1614,10 +1706,11 @@ class TransparenciaApi(object):
 
         Args:
             id, str: Identificador do registro. (required)
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             ano, str: Ano de exercÃ­cio, lista disponÃ­vel em GET /transparencia/anosExercicioReceita (required)
             mes, str: MÃªs desejado (required)
             unidade, str: Unidades, lista disponÃ­vel em GET /transparencia/unidades (required)
@@ -1627,7 +1720,7 @@ class TransparenciaApi(object):
         Returns: ReceitaResponse
         """
 
-        allParams = ['id', 'access_token', 'client_id', 'offset', 'limit', 'ano', 'mes', 'unidade', 'natureza']
+        allParams = ['id', 'client_id', 'offset', 'limit', 'fields', 'filters', 'ano', 'mes', 'unidade', 'natureza']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -1650,6 +1743,12 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
+        
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
         if ('ano' in params):
             queryParams['ano'] = self.apiClient.toPathValue(params['ano'])
         
@@ -1663,9 +1762,6 @@ class TransparenciaApi(object):
             queryParams['natureza'] = self.apiClient.toPathValue(params['natureza'])
         
 
-        
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -1698,16 +1794,17 @@ class TransparenciaApi(object):
         
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: list[subItensContasResponse]
         """
 
-        allParams = ['access_token', 'client_id', 'offset', 'limit']
+        allParams = ['client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -1730,10 +1827,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -1762,16 +1862,17 @@ class TransparenciaApi(object):
 
         Args:
             id, str: Identificador do registro. (required)
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: subItensContasResponse
         """
 
-        allParams = ['id', 'access_token', 'client_id', 'offset', 'limit']
+        allParams = ['id', 'client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -1794,10 +1895,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -1830,16 +1934,17 @@ class TransparenciaApi(object):
         
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: list[SubfuncoesResponse]
         """
 
-        allParams = ['access_token', 'client_id', 'offset', 'limit']
+        allParams = ['client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -1862,10 +1967,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -1894,16 +2002,17 @@ class TransparenciaApi(object):
 
         Args:
             id, str: Identificador do registro. (required)
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: SubfuncoesResponse
         """
 
-        allParams = ['id', 'access_token', 'client_id', 'offset', 'limit']
+        allParams = ['id', 'client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -1926,10 +2035,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -1962,16 +2074,17 @@ class TransparenciaApi(object):
         
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: list[tipoLicitacoesResponse]
         """
 
-        allParams = ['access_token', 'client_id', 'offset', 'limit']
+        allParams = ['client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -1994,10 +2107,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -2026,16 +2142,17 @@ class TransparenciaApi(object):
 
         Args:
             id, str: Identificador do registro. (required)
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: tipoLicitacoesResponse
         """
 
-        allParams = ['id', 'access_token', 'client_id', 'offset', 'limit']
+        allParams = ['id', 'client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -2058,10 +2175,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -2094,16 +2214,17 @@ class TransparenciaApi(object):
         
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: list[UnidadesResponse]
         """
 
-        allParams = ['access_token', 'client_id', 'offset', 'limit']
+        allParams = ['client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -2126,10 +2247,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -2158,16 +2282,17 @@ class TransparenciaApi(object):
 
         Args:
             id, str: Identificador do registro. (required)
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: UnidadesResponse
         """
 
-        allParams = ['id', 'access_token', 'client_id', 'offset', 'limit']
+        allParams = ['id', 'client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -2190,10 +2315,13 @@ class TransparenciaApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -2226,17 +2354,18 @@ class TransparenciaApi(object):
         
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
             expand, str: ParÃ¢metro utilizado para obter maiores detalhes sobre algum dos atributos do recurso. Podendo ser passados mÃºltiplos campos separados por vÃ­rgula (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: list[UnidadeGestoraResponse]
         """
 
-        allParams = ['access_token', 'client_id', 'offset', 'limit', 'expand']
+        allParams = ['client_id', 'offset', 'limit', 'expand', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -2262,10 +2391,13 @@ class TransparenciaApi(object):
         if ('expand' in params):
             queryParams['expand'] = self.apiClient.toPathValue(params['expand'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -2294,17 +2426,18 @@ class TransparenciaApi(object):
 
         Args:
             id, str: Identificador do registro. (required)
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
             expand, str: ParÃ¢metro utilizado para obter maiores detalhes sobre algum dos atributos do recurso. Podendo ser passados mÃºltiplos campos separados por vÃ­rgula (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: UnidadeGestoraResponse
         """
 
-        allParams = ['id', 'access_token', 'client_id', 'offset', 'limit', 'expand']
+        allParams = ['id', 'client_id', 'offset', 'limit', 'expand', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -2330,10 +2463,13 @@ class TransparenciaApi(object):
         if ('expand' in params):
             queryParams['expand'] = self.apiClient.toPathValue(params['expand'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']

@@ -5,6 +5,7 @@ class AcoesResponse:
 
     def __init__(self):
         self.swaggerTypes = {
+            'links': 'list[LinksModel]',
             'id': 'str',
             'nome': 'str',
             'descricao': 'int',
@@ -13,6 +14,7 @@ class AcoesResponse:
         }
 
         self.attributeMap = {
+            'links': 'links',
             'id': 'ID',
             'nome': 'nome',
             'descricao': 'descricao',
@@ -20,6 +22,9 @@ class AcoesResponse:
             
         }
 
+        
+        
+        self.links = None # list[LinksModel]
         
         #Identificador do registro.
         

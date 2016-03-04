@@ -5,6 +5,7 @@ class FonteDetalhadaResponse:
 
     def __init__(self):
         self.swaggerTypes = {
+            'links': 'list[LinksModel]',
             'id': 'str',
             'descricao': 'str',
             'codigo_grupo': 'str'
@@ -12,12 +13,16 @@ class FonteDetalhadaResponse:
         }
 
         self.attributeMap = {
+            'links': 'links',
             'id': 'ID',
             'descricao': 'descricao',
             'codigo_grupo': 'codigoGrupo'
             
         }
 
+        
+        
+        self.links = None # list[LinksModel]
         
         #Identificador do registro.
         

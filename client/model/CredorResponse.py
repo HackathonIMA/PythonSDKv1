@@ -5,6 +5,7 @@ class CredorResponse:
 
     def __init__(self):
         self.swaggerTypes = {
+            'links': 'list[LinksModel]',
             'id': 'str',
             'descricao': 'str',
             'municipio_descricao': 'str'
@@ -12,12 +13,16 @@ class CredorResponse:
         }
 
         self.attributeMap = {
+            'links': 'links',
             'id': 'ID',
             'descricao': 'descricao',
             'municipio_descricao': 'municipioDescricao'
             
         }
 
+        
+        
+        self.links = None # list[LinksModel]
         
         #Identificador do registro.
         

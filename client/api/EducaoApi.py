@@ -18,16 +18,17 @@ class EducaoApi(object):
         O recurso de educaÃ§Ã£o retorna dados sobre instituiÃ§Ãµes educacionais na \nÃ¡rea de Campinas.\n
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             offset, str: ParÃ¢metro utilizado para indicar a posiÃ§Ã£o do registro inicial que serÃ¡ trazido. A primeira posiÃ§Ã£o Ã© sempre zero (0). (required)
             limit, str: ParÃ¢metro utilizado para indicar a quantidade de registros que deve ser trazido na consulta. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: list[EducacaoResponse]
         """
 
-        allParams = ['access_token', 'client_id', 'offset', 'limit']
+        allParams = ['client_id', 'offset', 'limit', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -50,10 +51,13 @@ class EducaoApi(object):
         if ('limit' in params):
             queryParams['limit'] = self.apiClient.toPathValue(params['limit'])
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
@@ -81,15 +85,16 @@ class EducaoApi(object):
         
 
         Args:
-            access_token, str: Access Token com as permissÃµes de acesso. (required)
             client_id, str: Token disponibilizado na criaÃ§Ã£o da APP. (required)
             id, int: Identificador do registro. (required)
+            fields, list[str]: ParÃ¢metro utilizado para pesquisar campos especÃ­ficos (required)
+            filters, list[str]: ParÃ¢metro utilizado para pesquisar valores de campos especÃ­ficos, por exemplo, para pesquisar um id de valor 123, passar o valor id:123 (required)
             
 
         Returns: EducacaoResponse
         """
 
-        allParams = ['access_token', 'client_id', 'id']
+        allParams = ['client_id', 'id', 'fields', 'filters']
 
         params = locals()
         for (key, val) in params['kwargs'].items():
@@ -106,10 +111,13 @@ class EducaoApi(object):
         headerParams = {}
 
         
-
+        if ('fields' in params):
+            queryParams['fields'] = self.apiClient.toPathValue(params['fields'])
         
-        if ('access_token' in params):
-            headerParams['access-token'] = params['access_token']
+        if ('filters' in params):
+            queryParams['filters'] = self.apiClient.toPathValue(params['filters'])
+        
+
         
         if ('client_id' in params):
             headerParams['client_id'] = params['client_id']
